@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
+  
     <div class="header">
       <div class="container header__content">
         <div class="header__left">
@@ -20,12 +20,13 @@
             <input class="header__search" type="submit" value=""> 
           </form>
         </div>
-        <div class="header__right">
-          <img class="cart block" src="img/cart.svg" alt="cart">
+        <div class="header__right" id = 'cart'>
+          <img class="cart block" src="img/cart.svg" alt="cart" @click="cartShown = !cartShown">
           <a class="button header__button" href="#" >My Account</a>
-          <div class="header__cart">
+          <div class="header__cart" v-show="cartShown">
             <div class="header__cart_content">
-              <div class="header__cart_item">
+              <h2>{{'Hello cart'}}</h2>
+              <!-- <div class="header__cart_item">
                 <div class="header__cart_img"><a href="#"><img src="http://via.placeholder.com/72x85" alt=""></a></div>
                 <div class="header__cart_description">
                   <a href="#" class="header__cart_name block">Rebox Zane</a>
@@ -58,7 +59,7 @@
                 <div class="header__cart_delete block">
                   <i class="fa fa-times-circle"></i>
                   </div>
-              </div>
+              </div> -->
             </div>
             <div class="header__cart_total">
               <p class="header__total_left">TOTAL</p>
@@ -132,8 +133,20 @@
       <h3 class="featured__h3">Fetured Items</h3>
       <p class="featured__p">Shop for items based on what we featured in this week</p>
     </div>
-    <div class="product container">
+    <div class="product container" id="prod">
       <div class="product-box  padding-site">
+        
+        
+        <div class="product__item" v-for="product__item of products" :key = "products.id_product">
+          <div class="product__img">
+            <a href="#"><img class="product__image" :src="image" alt=""></a>
+          </div>
+          <div class="product__profile">
+            <a href="#" class="product__name">{{ product__item.product_name }}</a>
+            <p class="product__price">$  {{ product__item.price }}</p>
+          </div>
+          <a href="#" class="product__add"><img src="img/prod-add.png" alt="prod__add"> Add to Cart</a>
+        </div>
         <!-- <div class="product__item">
           <div class="product__img"> 
             <a href="#"><img class = "product__image" src="img/prod-img1.jpg" alt=""></a>
@@ -214,6 +227,7 @@
           </div>
           <a href="#" class="product__add"><img src="img/prod-add.png" alt="prod__add"> Add to Cart</a>
         </div> -->
+         
       </div>
     </div>
     <div class="browse__all container">
@@ -224,8 +238,9 @@
         
       </div>
     </div>
-  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="vue.js"></script>
+  <script src="cart.js"></script>
+<script src="prod.js"></script>
 </body>
 </html>
