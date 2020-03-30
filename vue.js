@@ -4,22 +4,20 @@
 let app = new Vue ({
   el: '#app',
   data: {      //хранилище внутренних данных
-    name: 'John',
-    body: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam animi itaque iusto at distinctio quos veritatis dicta tenetur ad repellat!`,
-    email: 'lol@kek.ru',
+    product_name: ``,
+    product_image: ``,
     url: 'https://jsonplaceholder.typicode.com/comments',
-    comments: [],
-    commentsNumber: 10,
-    fPostShown: true,
+    products: [],
+    cartShown: false,
   },
   methods: {   //методы
-    getComments (url) {
+    getProducts (url) {
       return fetch (url) 
         .then (d => d.json ())
       
     },
     reload (url) {
-      this.getComments (this.getUrl)
+      this.getProducts (this.getUrl)
       .then (data => {
         this.comments = data
       })
@@ -32,7 +30,7 @@ let app = new Vue ({
     }
   },
   mounted () {
-    this.getComments (this.getUrl)
+    this.getProducts (this.getUrl)
       .then (data => {
         this.comments = data
       })
