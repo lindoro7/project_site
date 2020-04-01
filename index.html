@@ -22,9 +22,10 @@
         </div>
         <div class="header__right" id = 'cart'>
           <img class="cart block" src="img/cart.svg" alt="cart" @click="cartShown = !cartShown">
+          <div class="cartNotEmpty"></div>
           <a class="button header__button" href="#" >My Account</a>
           <div class="header__cart" v-show="cartShown">
-            <div class="header__cart_content" v-for="header__cart_item of products">
+            <div class="header__cart_content" v-for="header__cart_item of products" :key = "products.id_product">
               <div class="header__cart_item">
                 <div class="header__cart_img"><a href="#"><img src="http://via.placeholder.com/72x85" alt=""></a></div>
                 <div class="header__cart_description">
@@ -79,7 +80,7 @@
             </div>
             <div class="header__cart_total">
               <p class="header__total_left">TOTAL</p>
-              <p class="header__total_right">$500.00</p>
+              <p class="header__total_right">${{ totalSum }}.00</p>
             </div>
             <a href="#" class="header__cart_button button block">Checkout</a>
             <a href="#" class="header__cart_go-cart block">Go to cart</a>
