@@ -24,8 +24,24 @@
           <img class="cart block" src="img/cart.svg" alt="cart" @click="cartShown = !cartShown">
           <a class="button header__button" href="#" >My Account</a>
           <div class="header__cart" v-show="cartShown">
-            <div class="header__cart_content">
-              <h2>{{'Hello cart'}}</h2>
+            <div class="header__cart_content" v-for="header__cart_item of products">
+              <div class="header__cart_item">
+                <div class="header__cart_img"><a href="#"><img src="http://via.placeholder.com/72x85" alt=""></a></div>
+                <div class="header__cart_description">
+                  <a href="#" class="header__cart_name block">{{ header__cart_item.product_name }}</a>
+                  <p class="header__cart_rank">
+                    <div class="clip-star"></div>
+                    <div class="clip-star"></div>
+                    <div class="clip-star"></div>
+                    <div class="clip-star"></div>
+                    <div class="clip-star"></div>
+                  </p>
+                  <p class="header__cart_price">{{header__cart_item.quantity}}  x   $ {{ header__cart_item.price }}</p>
+                </div>
+                <div class="header__cart_delete block">
+                  <i class="fa fa-times-circle"></i>
+                  </div>
+              </div>
               <!-- <div class="header__cart_item">
                 <div class="header__cart_img"><a href="#"><img src="http://via.placeholder.com/72x85" alt=""></a></div>
                 <div class="header__cart_description">

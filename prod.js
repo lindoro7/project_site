@@ -16,17 +16,13 @@ let prod = new Vue ({
               .then (d => d.json ())
     }
   },
-  computed: {
-
-  },
+  
   mounted () {
     this.getProducts (this.url)
           .then (data => {
             this.products = data
           })
-          .finally (() => {
-            console.log(this.products)
-          })
+          
   }
 
  

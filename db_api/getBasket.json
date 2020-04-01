@@ -7,14 +7,14 @@
       "product_name": "Mango  People  T-shirt",
       "product_image": "http://via.placeholder.com/261x280",
       "price": 51,
-      "quantity": "1"
+      "quantity": 1
     },
     {
       "id_product": 2,
       "product_name": "Mango  People  T-shirt",
       "product_image": "http://via.placeholder.com/261x280",
       "price": 52,
-      "quantity": "1"
+      "quantity": 1
     }
   ]
 }

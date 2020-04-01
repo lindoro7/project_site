@@ -145,7 +145,7 @@ body {
 }
 
 .header__cart_description {
-  margin-right: 79px;
+  margin-right: 10px;
 }
 
 .header__cart_price {
@@ -161,6 +161,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 10px;
+  width: 140px;
 }
 
 .header__cart_delete {
